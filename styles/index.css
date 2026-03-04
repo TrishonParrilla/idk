@@ -71,16 +71,23 @@ main {
     padding: 1.5em;
     border-radius:14px;
     width: min(90%, 700px);
-    transition: ease-in-out 0.3s;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.3s ease,
+                border 0.3s ease;
 }
 
 .intro:hover {
     background: rgba(37, 99, 235, 0.28);
-     /* WRITE THIS DOWN WRITE THIS DOWN. */
     transform: scale(1.05) rotate(1deg);
     box-shadow: 0 14px 30px rgba(2, 6, 23, 0.45);
     border: 1px solid rgba(148, 163, 184, 0.9);
+}
 
+.intro:active {
+    transform: scale(1.07) rotate(-1deg);
+    box-shadow: 0 16px 34px rgba(2, 6, 23, 0.55);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 
@@ -96,7 +103,7 @@ main {
 
 .intro-img {
     flex-shrink: 0;
-    width: 180px;
+    width: 220px;
 }
 .intro-img img {
     border-radius: 12px;
@@ -117,7 +124,10 @@ main {
     padding:1em;
     border-radius:14px;
     width: min(90%, 700px);
-    transition: ease-in-out 0.3s;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.3s ease,
+                border 0.3s ease;
 }
 
 .about-me hr {
@@ -129,6 +139,12 @@ main {
     box-shadow: 0 14px 30px rgba(2, 6, 23, 0.45);
     transform: scale(1.05) rotate(-1deg);
     border: 1px solid rgba(148, 163, 184, 0.9);
+}
+
+.about-me:active {
+    transform: scale(1.07) rotate(1deg);
+    box-shadow: 0 16px 34px rgba(2, 6, 23, 0.55);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 
@@ -145,7 +161,10 @@ main {
     padding:1em;
     border-radius:14px;
     width: min(90%, 700px);
-    transition: ease-in-out 0.3s;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.3s ease,
+                border 0.3s ease;
 }
 
 .tech-stack hr {
@@ -207,6 +226,12 @@ main {
     border: 1px solid rgba(148, 163, 184, 0.9);
 }
 
+.tech-stack:active {
+    transform: scale(1.07) rotate(-1deg);
+    box-shadow: 0 16px 34px rgba(2, 6, 23, 0.55);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -238,7 +263,10 @@ main {
     border: 1px solid rgba(148, 163, 184, 0.35);
     border-radius: 14px;
     box-shadow: 0 10px 24px rgba(2, 6, 23, 0.45);
-    transition: ease-in-out 0.5s;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.5s ease,
+                border 0.3s ease;
     cursor: pointer;
 }
 
@@ -246,6 +274,12 @@ main {
     background: rgba(37, 99, 235, 0.28);
     box-shadow: 0 14px 30px rgba(2, 6, 23, 0.45);
     transform: scale(1.05) rotate(1deg);
+}
+
+.card:active {
+    transform: scale(1.07) rotate(-1deg);
+    box-shadow: 0 16px 34px rgba(2, 6, 23, 0.55);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card .highlight {
@@ -314,6 +348,7 @@ main {
     }
 
     .intro-img {
+        width: 200px;
         margin-bottom: 1em;
     }
 
@@ -344,6 +379,15 @@ main {
     .tech-stack:hover,
     .card:hover {
         transform: scale(1.02);
+    }
+
+    .intro:active,
+    .about-me:active,
+    .tech-stack:active,
+    .card:active {
+        transform: scale(1.05) rotate(-1deg);
+        box-shadow: 0 16px 34px rgba(2, 6, 23, 0.55);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 }
 
@@ -376,8 +420,12 @@ main {
         padding: 0.8em;
     }
 
+    .intro-img {
+        width: 160px;
+    }
+
     .intro-img img {
-        max-width: 150px;
+        max-width: 160px;
     }
 
     .card {
@@ -401,5 +449,14 @@ main {
     .tech-stack:hover,
     .card:hover {
         transform: none;
+    }
+
+    .intro:active,
+    .about-me:active,
+    .tech-stack:active,
+    .card:active {
+        transform: scale(1.03) rotate(-1deg);
+        box-shadow: 0 14px 30px rgba(2, 6, 23, 0.55);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 }
