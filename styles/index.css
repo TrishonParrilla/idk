@@ -8,6 +8,7 @@ body {
     font-family:"Roboto", sans-serif;
     background-image: linear-gradient(140deg, #0B1220, #111827);
     color: #E5E7EB;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .nav-container {
@@ -84,7 +85,8 @@ main {
     border: 1px solid rgba(148, 163, 184, 0.9);
 }
 
-.intro:active {
+.intro:focus {
+    outline: none;
     transform: scale(1.07) rotate(-1deg);
     box-shadow: 0 16px 34px rgba(2, 6, 23, 0.55);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -141,7 +143,8 @@ main {
     border: 1px solid rgba(148, 163, 184, 0.9);
 }
 
-.about-me:active {
+.about-me:focus {
+    outline: none;
     transform: scale(1.07) rotate(1deg);
     box-shadow: 0 16px 34px rgba(2, 6, 23, 0.55);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -226,7 +229,8 @@ main {
     border: 1px solid rgba(148, 163, 184, 0.9);
 }
 
-.tech-stack:active {
+.tech-stack:focus {
+    outline: none;
     transform: scale(1.07) rotate(-1deg);
     box-shadow: 0 16px 34px rgba(2, 6, 23, 0.55);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -276,7 +280,8 @@ main {
     transform: scale(1.05) rotate(1deg);
 }
 
-.card:active {
+.card:focus {
+    outline: none;
     transform: scale(1.07) rotate(-1deg);
     box-shadow: 0 16px 34px rgba(2, 6, 23, 0.55);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -381,10 +386,11 @@ main {
         transform: scale(1.02);
     }
 
-    .intro:active,
-    .about-me:active,
-    .tech-stack:active,
-    .card:active {
+    .intro:focus,
+    .about-me:focus,
+    .tech-stack:focus,
+    .card:focus {
+        outline: none;
         transform: scale(1.05) rotate(-1deg);
         box-shadow: 0 16px 34px rgba(2, 6, 23, 0.55);
         transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -451,10 +457,11 @@ main {
         transform: none;
     }
 
-    .intro:active,
-    .about-me:active,
-    .tech-stack:active,
-    .card:active {
+    .intro:focus,
+    .about-me:focus,
+    .tech-stack:focus,
+    .card:focus {
+        outline: none;
         transform: scale(1.03) rotate(-1deg);
         box-shadow: 0 14px 30px rgba(2, 6, 23, 0.55);
         transition: transform 0.15s ease, box-shadow 0.15s ease;
