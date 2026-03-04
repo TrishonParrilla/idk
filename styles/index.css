@@ -12,14 +12,13 @@ body {
 
 .nav-container {
     display:flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     background-color: rgba(30, 41, 59, 0.72);
     backdrop-filter: blur(12px);
-    padding-top:1em;
-    width:50%;
+    padding: 1em 2em 0.5em;
+    width: min(90%, 900px);
     margin:auto;
-    padding-bottom:.5em;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border: 1px solid rgba(148, 163, 184, 0.35);
@@ -28,7 +27,7 @@ body {
 
 .nav-container h1 {
     font-size: 1.5em;
-    margin-right: 20em;
+    margin-right: auto;
 }
 
 .nav-links {
@@ -50,8 +49,9 @@ main {
     align-items: center;
     justify-content: flex-start;
     margin: 5em auto;
-    width:50%;
-    height:100rem;
+    width: min(90%, 900px);
+    min-height: 100vh;
+    padding-bottom: 4em;
     background-color: rgba(30, 41, 59, 0.72);
     border: 1px solid rgba(148, 163, 184, 0.35);
     border-radius:5px;
@@ -61,14 +61,16 @@ main {
     margin-top: 3em;
     display:flex;
     flex-direction: row;
+    align-items: center;
+    gap: 1.5em;
     background: rgba(37, 99, 235, 0.18);
     color: #E5E7EB;
     backdrop-filter: blur(12px);
     border: 1px solid rgba(148, 163, 184, 0.35);
     box-shadow: 0 10px 24px rgba(2, 6, 23, 0.45);
-    padding:1em;
+    padding: 1.5em;
     border-radius:14px;
-    width:70%;
+    width: min(90%, 700px);
     transition: ease-in-out 0.3s;
 }
 
@@ -83,8 +85,9 @@ main {
 
 
 
-.intro-text {  
-    margin-right:1em;
+.intro-text {
+    flex: 1;
+    min-width: 0;
 }
 
 .intro-text p {
@@ -92,13 +95,14 @@ main {
 }
 
 .intro-img {
-    width:100%;
-    height: 100%;
-    box-shadow:rgba(0, 0, 0, 0.3) 0 px 6px;
-    margin-top:.2em;
+    flex-shrink: 0;
+    width: 180px;
 }
 .intro-img img {
-    border-radius: 10px;
+    border-radius: 12px;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .about-me {
@@ -112,7 +116,7 @@ main {
     box-shadow: 0 10px 24px rgba(2, 6, 23, 0.45);
     padding:1em;
     border-radius:14px;
-    width:70%;
+    width: min(90%, 700px);
     transition: ease-in-out 0.3s;
 }
 
@@ -140,7 +144,7 @@ main {
     box-shadow: 0 10px 24px rgba(2, 6, 23, 0.45);
     padding:1em;
     border-radius:14px;
-    width:70%;
+    width: min(90%, 700px);
     transition: ease-in-out 0.3s;
 }
 
@@ -205,12 +209,14 @@ main {
 
 .card-container {
     display: flex;
+    flex-wrap: wrap;
     gap:2em;
+    justify-content: center;
 }
 
 .projects {
     display: flex;
-    width:90%;
+    width: min(95%, 800px);
     justify-content: center;
 }
 
@@ -254,4 +260,146 @@ main {
 .card h3 {
     text-align: center;
     margin-top:1em;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+    .nav-container,
+    main {
+        width: 92%;
+    }
+
+    .intro,
+    .about-me,
+    .tech-stack {
+        width: 88%;
+    }
+
+    .projects {
+        width: 92%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 0.8em;
+        padding: 1em 1.2em;
+        width: 95%;
+    }
+
+    .nav-container h1 {
+        font-size: 1.25em;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        width: 95%;
+        margin: 3em auto;
+    }
+
+    .intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 90%;
+    }
+
+    .intro-img {
+        margin-bottom: 1em;
+    }
+
+    .intro-text {
+        margin-right: 0;
+    }
+
+    .about-me,
+    .tech-stack {
+        width: 90%;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 85%;
+    }
+
+    .projects {
+        width: 95%;
+    }
+
+    .intro:hover,
+    .about-me:hover,
+    .tech-stack:hover,
+    .card:hover {
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        width: 100%;
+        border-radius: 0;
+        padding: 0.8em 1em;
+    }
+
+    .nav-container h1 {
+        font-size: 1.1em;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 0.9em;
+    }
+
+    main {
+        width: 100%;
+        margin: 2em auto;
+        border-radius: 0;
+    }
+
+    .intro,
+    .about-me,
+    .tech-stack {
+        width: 94%;
+        padding: 0.8em;
+    }
+
+    .intro-img img {
+        max-width: 150px;
+    }
+
+    .card {
+        width: 92%;
+    }
+
+    .tech-stack i {
+        font-size: 1.6em;
+    }
+
+    .tech-item {
+        min-width: 65px;
+    }
+
+    .tech-item span {
+        font-size: 0.68rem;
+    }
+
+    .intro:hover,
+    .about-me:hover,
+    .tech-stack:hover,
+    .card:hover {
+        transform: none;
+    }
 }
