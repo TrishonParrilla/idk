@@ -23,7 +23,7 @@
     </header>
 
     <main>
-        <div class="intro" tabindex="0">
+        <div class="intro reveal">
             <div class="intro-img">
                 <img src="./images/guntharProfile.jpg" alt="Trishon Parrilla" width="200px" height="200px">
             </div>
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="about-me" tabindex="0">
+        <div class="about-me reveal">
             <h3>About Me</h3>
             <hr
             <p>I am a passionate software engineer with experience in web development and machine learning. I enjoy creating innovative solutions and learning new technologies.</p>
@@ -42,7 +42,7 @@
             <p>Let's connect and create something amazing together!</p>
         </div>
 
-        <section class="tech-stack" tabindex="0">
+        <section class="tech-stack reveal">
             <h3>Tech Stack</h3>
             <hr>
             <p>I am proficient in a variety of programming languages and frameworks, including JavaScript, Python, React, and Node.js.
@@ -82,24 +82,34 @@
 
         <section class="projects">
             <div class="card-container">
-                <div class="card" tabindex="0">
-                    <h3>Project 1</h3>
-                    <img src="https://picsum.photos/200/300" alt="Project 1 Image" width="300" height="200">
-                    <p>This is a description of Project 1, highlighting its features and technologies used.</p>
+                <div class="card reveal">
+                    <h3>React App</h3>
+                    <img src="https://placehold.co/600x400/1e293b/38bdf8?text=%3C%2F%3E+React+App" alt="Project 1 Image" width="300" height="200">
+                    <p></p>
                 </div>
-                <div class="card" tabindex="0">
-                    <h3>Project 2</h3>
-                    <img src="https://picsum.photos/200/300" alt="Project 2 Image" width="300" height="200">
-                    <p>This is a description of Project 2, highlighting its features and technologies used.</p>
+                <div class="card reveal">
+                    <h3>Python ML Model</h3>
+                    <img src="https://placehold.co/600x400/1e293b/a78bfa?text=Python+%7C+ML+Model" alt="Project 2 Image" width="300" height="200">
+                    <p></p>
                 </div>
-                <div class="card" tabindex="0">
-                    <h3>Project 3</h3>
-                    <img src="https://picsum.photos/200/300" alt="Project 3 Image" width="300" height="200">
-                    <p>This is a description of Project 3, highlighting its features and technologies used.</p>
+                <div class="card reveal">
+                    <h3>Node.js API</h3>
+                    <img src="https://placehold.co/600x400/1e293b/34d399?text=Node.js+API" alt="Project 3 Image" width="300" height="200">
+                    <p></p>
                 </div>
             </div>
         </section>
     </main>
     <script src="https://kit.fontawesome.com/f418239e0f.js" crossorigin="anonymous"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
